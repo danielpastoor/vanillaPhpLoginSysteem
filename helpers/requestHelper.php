@@ -15,10 +15,10 @@ class RequestHelper
         foreach ($request as $key => $item) {
             if (is_array($item)) {
                 foreach ($item as $childKey => $childItem) {
-                    $returnData[$key][$childKey] = htmlspecialchars($childItem);
+                    $returnData[$key][$childKey] = strip_tags($childItem);
                 }
             } else {
-                $returnData[$key] = htmlspecialchars($item);
+                $returnData[$key] = strip_tags($item);
             }
         }
 
